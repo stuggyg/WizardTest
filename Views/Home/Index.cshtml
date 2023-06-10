@@ -1,0 +1,172 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+	Layout = null;
+}
+
+
+
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" href="~/css/site.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+	<script src="~/js/wizard.js"></script>
+
+	<script>
+
+		$(document).ready(function () {
+			//$('#rootwizard').bootstrapWizard();
+			//$("#wizard").bootstrapWizard();
+
+			$('#wizard').bootstrapWizard({
+				'nextSelector': '.button-next',
+				'previousSelector': '.button-previous',
+				onTabClick: function (tab, navigation, index) {
+					return false;
+				}
+			});
+
+		});
+	</script>
+
+</head>
+
+
+<body>
+
+
+
+	@*
+	<div id="rootwizard">
+	<div class="navbar">
+	<div class="navbar-inner">
+	<div class="container">
+	<ul>
+	<li><a href="#tab1" data-toggle="tab">First</a></li>
+	<li><a href="#tab2" data-toggle="tab">Second</a></li>
+	<li><a href="#tab3" data-toggle="tab">Third</a></li>
+	<li><a href="#tab4" data-toggle="tab">Forth</a></li>
+	<li><a href="#tab5" data-toggle="tab">Fifth</a></li>
+	<li><a href="#tab6" data-toggle="tab">Sixth</a></li>
+	<li><a href="#tab7" data-toggle="tab">Seventh</a></li>
+	</ul>
+	</div>
+	</div>
+	</div>
+	<div class="tab-content">
+	<div class="tab-pane" id="tab1">
+	1
+	</div>
+	<div class="tab-pane" id="tab2">
+	2
+	</div>
+	<div class="tab-pane" id="tab3">
+	3
+	</div>
+	<div class="tab-pane" id="tab4">
+	4
+	</div>
+	<div class="tab-pane" id="tab5">
+	5
+	</div>
+	<div class="tab-pane" id="tab6">
+	6
+	</div>
+	<div class="tab-pane" id="tab7">
+	7
+	</div>
+	<ul class="pager wizard">
+	<li class="previous first" style="display:none;"><a href="#">First</a></li>
+	<li class="previous"><a href="#">Previous</a></li>
+	<li class="next last" style="display:none;"><a href="#">Last</a></li>
+	<li class="next"><a href="#">Next</a></li>
+	</ul>
+	</div>
+	</div>
+
+	</div>*@
+
+
+	<form method="post" action="...">
+
+		<div style="margin:10px 0px">
+
+			<div class="container">
+				<div class="row">
+
+					<div id="wizard">
+						<!-- Tabstrip -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active">
+								<a href="#personal" role="tab" data-toggle="tab">New SCR Return</a>
+							</li>
+							<li role="presentation">
+								<a href="#hobbies" role="tab" data-toggle="tab">SCR Return Q1</a>
+
+							</li>
+
+							<li role="presentation">
+								<a href="#confirm" role="tab" data-toggle="tab">Confirm</a>
+
+							</li>
+
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="personal">
+								<!-- Input fields -->
+								<p>
+									Start a new SQEP SCR Return for your Organisation.<br />
+									The last SCR Return finalizsed was on : 2023/06/07 by Sgallagher
+								</p>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="hobbies">
+								<!-- Input fields -->
+								<p>Does this new SCR Return split up into multiple files?</p>
+								<label class="radio-inline"><input type="radio" name="optradio" checked>No</label>
+								<label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+							</div>
+
+							<div role="tabpanel" class="tab-pane" id="confirm">
+								<!-- Input fields -->
+								Confirm start of new SCR Return - this will archive the previous submission and all graphs will be based on this submission.
+								<button type="button" class="btn buttonconfirm">Confirm(Submit)</button>
+							</div>
+
+							<ul class="pager wizard">
+								@*<li class="previous first"><a href="javascript:;">First</a></li>
+								<li class="previous"><a href="javascript:;">Back</a></li>
+								<li class="next last"><a href="javascript:;">Last</a></li>
+								<li class="next"><a href="javascript:;">Next</a></li>*@
+
+								<div style="float:right">
+									<input type='button' class='btn button-next' value='Next' />
+								</div>
+								<div style="float:left">
+									<input type='button' class='btn button-previous' value='Back' />
+								</div>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+</body>
